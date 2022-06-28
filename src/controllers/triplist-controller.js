@@ -25,3 +25,13 @@ export const getAllTripList = (req,res) => {
         res.json(triplist);
     });
 }
+
+export const deleteListByName = (req,res) => {
+    console.log(req.params);
+    TripList.remove({destinationName:req.params.destName},(err,data) => {
+        if(err){
+            res.send(res);
+        }
+        res.json({ message: "Trip deleted successfully."});
+    });
+}

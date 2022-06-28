@@ -1,4 +1,4 @@
-import { addTripList, getAllTripList } from "../controllers/triplist-controller";
+import { addTripList, getAllTripList ,deleteListByName } from "../controllers/triplist-controller";
 
 const routes = (app) =>{
 
@@ -6,6 +6,11 @@ const routes = (app) =>{
         .get(getAllTripList)
         .post(addTripList);
 
+    app.route("/triplist/:destName")
+        .delete(deleteListByName);
+
 }
 
 export default routes;
+
+
